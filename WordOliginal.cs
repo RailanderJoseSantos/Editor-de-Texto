@@ -16,5 +16,11 @@ namespace Editor_de_Texto
         {
             InitializeComponent();
         }
+
+        private void btnNegrito_Click(object sender, EventArgs e)
+        {
+            String texto = rctTxb.Text;
+            texto.T
+        }
     }
 }
