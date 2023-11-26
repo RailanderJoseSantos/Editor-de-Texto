@@ -26,7 +26,7 @@ namespace Editor_de_Texto
 
         private void btnNegrito_Click(object sender, EventArgs e)
         {
-            String texto = rctTxb.Text;
+            Negrito();
             
         }
 
@@ -35,6 +35,162 @@ namespace Editor_de_Texto
             Abrir();
         }
         
+        private void Copiar()
+        {
+            if(rctTxb.SelectionLength > 0)
+            {
+                rctTxb.Copy();
+            }
+        }
+        private void Negrito()
+        {
+            string fonte=null;
+            float tamanho;
+            bool negrito, italico, sublinhado;
+            negrito = rctTxb.SelectionFont.Bold;
+            italico = rctTxb.SelectionFont.Italic;
+            sublinhado = rctTxb.SelectionFont.Underline;
+            tamanho = rctTxb.Font.Size;
+            negrito = rctTxb.Font.Bold;
+            if (! negrito) {
+                if (italico == true && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+
+                }
+                else if(italico == false && sublinhado == true){
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Underline);
+                }
+                else if (italico == true && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Italic );
+
+                }
+                else if (italico == false && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold);
+                }
+            }
+            else
+            {
+                if (italico == true && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho,  FontStyle.Italic | FontStyle.Underline);
+
+                }
+                else if (italico == false && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho,  FontStyle.Underline);
+                }
+                else if (italico == true && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho,  FontStyle.Italic);
+
+                }
+            }
+        }
+
+        private void Italico()
+        {
+            string fonte = null;
+            float tamanho;
+            bool negrito, italico, sublinhado;
+            negrito = rctTxb.SelectionFont.Bold;
+            italico = rctTxb.SelectionFont.Italic;
+            sublinhado = rctTxb.SelectionFont.Underline;
+            tamanho = rctTxb.Font.Size;
+            negrito = rctTxb.Font.Bold;
+            if (!italico)
+            {
+                if (negrito == true && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+
+                }
+                else if (negrito == false && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (negrito == true && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Italic);
+
+                }
+                else if (negrito == false && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Italic);
+                }
+            }
+            else
+            {
+                if (negrito == true && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Underline);
+
+                }
+                else if (negrito == false && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Underline);
+                }
+                else if (negrito == true && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold);
+                }
+            }
+        }
+        private void Colar()
+        {
+            rctTxb.Paste();
+        }
+
+        private void Sublinhado()
+        {
+            string fonte = null;
+            float tamanho;
+            bool negrito, italico, sublinhado;
+            negrito = rctTxb.SelectionFont.Bold;
+            italico = rctTxb.SelectionFont.Italic;
+            sublinhado = rctTxb.SelectionFont.Underline;
+            tamanho = rctTxb.Font.Size;
+            negrito = rctTxb.Font.Bold;
+            if (!sublinhado)
+            {
+                if (negrito == true && italico == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+
+                }
+                else if (negrito == false && italico == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (negrito == true && italico == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Underline);
+
+                }
+                else if (negrito == false && italico == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Underline);
+                }
+            }
+            else
+            {
+                if (negrito == true && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold | FontStyle.Italic);
+
+                }
+                else if (negrito == false && sublinhado == true)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Italic);
+                }
+                else if (negrito == true && sublinhado == false)
+                {
+                    rctTxb.SelectionFont = new Font(fonte, tamanho, FontStyle.Bold);
+                }
+            }
+        }
         private void salvarDocumento() {
             FileStream arquivo;
             try
@@ -116,6 +272,60 @@ namespace Editor_de_Texto
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             Abrir();
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Copiar();
+        }
+
+        private void btnCopiar_Click(object sender, EventArgs e)
+        {
+            Copiar();
+        }
+
+        private void btnColar_Click(object sender, EventArgs e)
+        {
+            Colar();
+        }
+
+        private void colarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Colar();
+        }
+
+        private void negritoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Negrito();
+        }
+
+        private void itálicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Italico();
+        }
+
+        private void btnItalico_Click(object sender, EventArgs e)
+        {
+            Italico();
+        }
+
+        private void sublinhadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sublinhado();
+        }
+
+        private void btnSublinhado_Click(object sender, EventArgs e)
+        {
+            Sublinhado();
+        }
+
+        private void centralizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Centralizar();
+        }
+
+        private void Centralizar()
+        {
         }
     }
 }
