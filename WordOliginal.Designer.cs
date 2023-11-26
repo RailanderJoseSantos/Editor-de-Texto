@@ -82,7 +82,7 @@
             this.rctTxb.Name = "rctTxb";
             this.rctTxb.Size = new System.Drawing.Size(802, 341);
             this.rctTxb.TabIndex = 0;
-            this.rctTxb.Text = "rjs";
+            this.rctTxb.Text = "";
             // 
             // mnMenu
             // 
@@ -282,6 +282,7 @@
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(23, 22);
             this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // btnSalvar
             // 
@@ -397,6 +398,7 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "rjs";
+            this.saveFileDialog1.Filter = "(*.rjs)|*.rjs";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // printDialog1

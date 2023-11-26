@@ -32,7 +32,7 @@ namespace Editor_de_Texto
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Abrir();
         }
         
         private void salvarDocumento() {
@@ -62,7 +62,32 @@ namespace Editor_de_Texto
                 MessageBox.Show("Descrição:  "+ex.Message,"Erro ao gravar", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-
+        private void Abrir()
+        {
+            this.openFileDialog1.Title = "Abrir Arquivo";
+            openFileDialog1.InitialDirectory = Environment.CurrentDirectory;
+            openFileDialog1.Filter="(*.rjs)|*.rjs";
+            if(this.saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try {
+                    FileStream arquivo = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
+                    StreamReader leitor = new StreamReader(arquivo);
+                    leitor.BaseStream.Seek(0, SeekOrigin.Begin);
+                    this.rctTxb.Text = "";
+                    string linha = leitor.ReadLine();
+                    //recebendo conteudo da linha + a proxima linha
+                    while( linha != null )
+                    {
+                        this.rctTxb.Text+= linha+"\n";
+                    }
+                    leitor.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Erro de leitura:  " + ex.Message, "Erro ai ler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             novoArquivo(this.rctTxb);
@@ -86,6 +111,11 @@ namespace Editor_de_Texto
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            Abrir();
         }
     }
 }
