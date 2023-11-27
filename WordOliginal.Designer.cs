@@ -35,7 +35,7 @@
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImprimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +50,6 @@
             this.centralizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aEsquerdaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDireitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.justificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tSBarraFerramenta = new System.Windows.Forms.ToolStrip();
             this.btnNovo = new System.Windows.Forms.ToolStripButton();
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
@@ -78,10 +77,9 @@
             // 
             // rctTxb
             // 
-            this.rctTxb.Location = new System.Drawing.Point(1, 64);
-            this.rctTxb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rctTxb.Location = new System.Drawing.Point(1, 52);
             this.rctTxb.Name = "rctTxb";
-            this.rctTxb.Size = new System.Drawing.Size(1068, 419);
+            this.rctTxb.Size = new System.Drawing.Size(802, 341);
             this.rctTxb.TabIndex = 0;
             this.rctTxb.Text = "";
             // 
@@ -94,7 +92,8 @@
             this.formataçãoToolStripMenuItem});
             this.mnMenu.Location = new System.Drawing.Point(0, 0);
             this.mnMenu.Name = "mnMenu";
-            this.mnMenu.Size = new System.Drawing.Size(1067, 28);
+            this.mnMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.mnMenu.Size = new System.Drawing.Size(800, 24);
             this.mnMenu.TabIndex = 1;
             this.mnMenu.Text = "menuStrip1";
             // 
@@ -104,43 +103,44 @@
             this.novoToolStripMenuItem,
             this.abrirToolStripMenuItem,
             this.salvarToolStripMenuItem,
-            this.sairToolStripMenuItem,
+            this.ImprimiToolStripMenuItem,
             this.sairToolStripMenuItem1});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
-            // sairToolStripMenuItem
+            // ImprimiToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.sairToolStripMenuItem.Text = "Imprimir";
+            this.ImprimiToolStripMenuItem.Name = "ImprimiToolStripMenuItem";
+            this.ImprimiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ImprimiToolStripMenuItem.Text = "Imprimir";
+            this.ImprimiToolStripMenuItem.Click += new System.EventHandler(this.ImprimiToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem1
             // 
             this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem1.Text = "Sair";
             // 
             // editarToolStripMenuItem
@@ -151,33 +151,33 @@
             this.desfazerToolStripMenuItem,
             this.refazerToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
             // colarToolStripMenuItem
             // 
             this.colarToolStripMenuItem.Name = "colarToolStripMenuItem";
-            this.colarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.colarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.colarToolStripMenuItem.Text = "Colar";
             this.colarToolStripMenuItem.Click += new System.EventHandler(this.colarToolStripMenuItem_Click);
             // 
             // desfazerToolStripMenuItem
             // 
             this.desfazerToolStripMenuItem.Name = "desfazerToolStripMenuItem";
-            this.desfazerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.desfazerToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.desfazerToolStripMenuItem.Text = "Desfazer";
             // 
             // refazerToolStripMenuItem
             // 
             this.refazerToolStripMenuItem.Name = "refazerToolStripMenuItem";
-            this.refazerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.refazerToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.refazerToolStripMenuItem.Text = "Refazer";
             // 
             // formataçãoToolStripMenuItem
@@ -188,27 +188,27 @@
             this.sublinhadoToolStripMenuItem,
             this.opçõesAlinhamentoToolStripMenuItem});
             this.formataçãoToolStripMenuItem.Name = "formataçãoToolStripMenuItem";
-            this.formataçãoToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.formataçãoToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.formataçãoToolStripMenuItem.Text = "Formatação";
             // 
             // negritoToolStripMenuItem
             // 
             this.negritoToolStripMenuItem.Name = "negritoToolStripMenuItem";
-            this.negritoToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.negritoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.negritoToolStripMenuItem.Text = "Negrito";
             this.negritoToolStripMenuItem.Click += new System.EventHandler(this.negritoToolStripMenuItem_Click);
             // 
             // itálicoToolStripMenuItem
             // 
             this.itálicoToolStripMenuItem.Name = "itálicoToolStripMenuItem";
-            this.itálicoToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.itálicoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.itálicoToolStripMenuItem.Text = "Itálico";
             this.itálicoToolStripMenuItem.Click += new System.EventHandler(this.itálicoToolStripMenuItem_Click);
             // 
             // sublinhadoToolStripMenuItem
             // 
             this.sublinhadoToolStripMenuItem.Name = "sublinhadoToolStripMenuItem";
-            this.sublinhadoToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.sublinhadoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.sublinhadoToolStripMenuItem.Text = "Sublinhado";
             this.sublinhadoToolStripMenuItem.Click += new System.EventHandler(this.sublinhadoToolStripMenuItem_Click);
             // 
@@ -217,36 +217,31 @@
             this.opçõesAlinhamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.centralizarToolStripMenuItem,
             this.aEsquerdaToolStripMenuItem,
-            this.aDireitaToolStripMenuItem,
-            this.justificarToolStripMenuItem});
+            this.aDireitaToolStripMenuItem});
             this.opçõesAlinhamentoToolStripMenuItem.Name = "opçõesAlinhamentoToolStripMenuItem";
-            this.opçõesAlinhamentoToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.opçõesAlinhamentoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.opçõesAlinhamentoToolStripMenuItem.Text = "Opções Alinhamento";
             // 
             // centralizarToolStripMenuItem
             // 
             this.centralizarToolStripMenuItem.Name = "centralizarToolStripMenuItem";
-            this.centralizarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.centralizarToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.centralizarToolStripMenuItem.Text = "Centralizar";
             this.centralizarToolStripMenuItem.Click += new System.EventHandler(this.centralizarToolStripMenuItem_Click);
             // 
             // aEsquerdaToolStripMenuItem
             // 
             this.aEsquerdaToolStripMenuItem.Name = "aEsquerdaToolStripMenuItem";
-            this.aEsquerdaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.aEsquerdaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.aEsquerdaToolStripMenuItem.Text = "A esquerda";
+            this.aEsquerdaToolStripMenuItem.Click += new System.EventHandler(this.aEsquerdaToolStripMenuItem_Click);
             // 
             // aDireitaToolStripMenuItem
             // 
             this.aDireitaToolStripMenuItem.Name = "aDireitaToolStripMenuItem";
-            this.aDireitaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.aDireitaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.aDireitaToolStripMenuItem.Text = "A direita";
-            // 
-            // justificarToolStripMenuItem
-            // 
-            this.justificarToolStripMenuItem.Name = "justificarToolStripMenuItem";
-            this.justificarToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
-            this.justificarToolStripMenuItem.Text = "Justificar";
+            this.aDireitaToolStripMenuItem.Click += new System.EventHandler(this.aDireitaToolStripMenuItem_Click);
             // 
             // tSBarraFerramenta
             // 
@@ -267,9 +262,9 @@
             this.btnEsquerda,
             this.btnCentro,
             this.btnDireita});
-            this.tSBarraFerramenta.Location = new System.Drawing.Point(0, 28);
+            this.tSBarraFerramenta.Location = new System.Drawing.Point(0, 24);
             this.tSBarraFerramenta.Name = "tSBarraFerramenta";
-            this.tSBarraFerramenta.Size = new System.Drawing.Size(1067, 27);
+            this.tSBarraFerramenta.Size = new System.Drawing.Size(800, 27);
             this.tSBarraFerramenta.TabIndex = 2;
             this.tSBarraFerramenta.Text = "toolStrip1";
             // 
@@ -279,7 +274,7 @@
             this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
             this.btnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(29, 24);
+            this.btnNovo.Size = new System.Drawing.Size(24, 24);
             this.btnNovo.Text = "Novo";
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
@@ -289,7 +284,7 @@
             this.btnAbrir.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrir.Image")));
             this.btnAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(29, 24);
+            this.btnAbrir.Size = new System.Drawing.Size(24, 24);
             this.btnAbrir.Text = "Abrir";
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
@@ -299,7 +294,7 @@
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(29, 24);
+            this.btnSalvar.Size = new System.Drawing.Size(24, 24);
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -314,7 +309,7 @@
             this.btnCopiar.Image = ((System.Drawing.Image)(resources.GetObject("btnCopiar.Image")));
             this.btnCopiar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCopiar.Name = "btnCopiar";
-            this.btnCopiar.Size = new System.Drawing.Size(29, 24);
+            this.btnCopiar.Size = new System.Drawing.Size(24, 24);
             this.btnCopiar.Text = "Copiar";
             this.btnCopiar.Click += new System.EventHandler(this.btnCopiar_Click);
             // 
@@ -324,7 +319,7 @@
             this.btnColar.Image = ((System.Drawing.Image)(resources.GetObject("btnColar.Image")));
             this.btnColar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnColar.Name = "btnColar";
-            this.btnColar.Size = new System.Drawing.Size(29, 24);
+            this.btnColar.Size = new System.Drawing.Size(24, 24);
             this.btnColar.Text = "Colar";
             this.btnColar.Click += new System.EventHandler(this.btnColar_Click);
             // 
@@ -339,7 +334,7 @@
             this.btnNegrito.Image = ((System.Drawing.Image)(resources.GetObject("btnNegrito.Image")));
             this.btnNegrito.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNegrito.Name = "btnNegrito";
-            this.btnNegrito.Size = new System.Drawing.Size(29, 24);
+            this.btnNegrito.Size = new System.Drawing.Size(24, 24);
             this.btnNegrito.Text = "Negrito";
             this.btnNegrito.Click += new System.EventHandler(this.btnNegrito_Click);
             // 
@@ -349,7 +344,7 @@
             this.btnItalico.Image = ((System.Drawing.Image)(resources.GetObject("btnItalico.Image")));
             this.btnItalico.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnItalico.Name = "btnItalico";
-            this.btnItalico.Size = new System.Drawing.Size(29, 24);
+            this.btnItalico.Size = new System.Drawing.Size(24, 24);
             this.btnItalico.Text = "Itálico";
             this.btnItalico.Click += new System.EventHandler(this.btnItalico_Click);
             // 
@@ -359,7 +354,7 @@
             this.btnSublinhado.Image = ((System.Drawing.Image)(resources.GetObject("btnSublinhado.Image")));
             this.btnSublinhado.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSublinhado.Name = "btnSublinhado";
-            this.btnSublinhado.Size = new System.Drawing.Size(29, 24);
+            this.btnSublinhado.Size = new System.Drawing.Size(24, 24);
             this.btnSublinhado.Text = "Sublinhado";
             this.btnSublinhado.Click += new System.EventHandler(this.btnSublinhado_Click);
             // 
@@ -369,8 +364,9 @@
             this.btnFonte.Image = ((System.Drawing.Image)(resources.GetObject("btnFonte.Image")));
             this.btnFonte.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFonte.Name = "btnFonte";
-            this.btnFonte.Size = new System.Drawing.Size(29, 24);
+            this.btnFonte.Size = new System.Drawing.Size(24, 24);
             this.btnFonte.Text = "Fonte";
+            this.btnFonte.Click += new System.EventHandler(this.btnFonte_Click);
             // 
             // toolStripSeparator3
             // 
@@ -383,8 +379,9 @@
             this.btnEsquerda.Image = ((System.Drawing.Image)(resources.GetObject("btnEsquerda.Image")));
             this.btnEsquerda.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEsquerda.Name = "btnEsquerda";
-            this.btnEsquerda.Size = new System.Drawing.Size(29, 24);
+            this.btnEsquerda.Size = new System.Drawing.Size(24, 24);
             this.btnEsquerda.Text = "Alinhar á esquerda";
+            this.btnEsquerda.Click += new System.EventHandler(this.btnEsquerda_Click);
             // 
             // btnCentro
             // 
@@ -392,8 +389,9 @@
             this.btnCentro.Image = ((System.Drawing.Image)(resources.GetObject("btnCentro.Image")));
             this.btnCentro.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCentro.Name = "btnCentro";
-            this.btnCentro.Size = new System.Drawing.Size(29, 24);
+            this.btnCentro.Size = new System.Drawing.Size(24, 24);
             this.btnCentro.Text = "Alinhar ao centro";
+            this.btnCentro.Click += new System.EventHandler(this.btnCentro_Click);
             // 
             // btnDireita
             // 
@@ -401,8 +399,9 @@
             this.btnDireita.Image = ((System.Drawing.Image)(resources.GetObject("btnDireita.Image")));
             this.btnDireita.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDireita.Name = "btnDireita";
-            this.btnDireita.Size = new System.Drawing.Size(29, 24);
+            this.btnDireita.Size = new System.Drawing.Size(24, 24);
             this.btnDireita.Text = "Alinhar a direita";
+            this.btnDireita.Click += new System.EventHandler(this.btnDireita_Click);
             // 
             // openFileDialog1
             // 
@@ -418,15 +417,18 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // frmWord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tSBarraFerramenta);
             this.Controls.Add(this.rctTxb);
             this.Controls.Add(this.mnMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -449,7 +451,7 @@
         private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImprimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
@@ -464,7 +466,6 @@
         private System.Windows.Forms.ToolStripMenuItem centralizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aEsquerdaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aDireitaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem justificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnNovo;
         private System.Windows.Forms.ToolStripButton btnAbrir;
         private System.Windows.Forms.ToolStripButton btnSalvar;

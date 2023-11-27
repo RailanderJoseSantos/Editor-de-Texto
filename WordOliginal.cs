@@ -14,7 +14,7 @@ namespace Editor_de_Texto
 {
     public partial class frmWord : Form
     {
-        protected StreamReader leitura = null;
+        protected StringReader leitura = null;
         public frmWord()
         {
             InitializeComponent();
@@ -319,13 +319,113 @@ namespace Editor_de_Texto
             Sublinhado();
         }
 
+        private void AlinharEsquerda()
+        {
+            rctTxb.SelectionAlignment = HorizontalAlignment.Left;
+        }
+        private void AlinharDireita()
+        {
+            rctTxb.SelectionAlignment = HorizontalAlignment.Right;
+
+        }
+        private void Centralizar()
+        {
+            rctTxb.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
         private void centralizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Centralizar();
         }
 
-        private void Centralizar()
+        private void btnEsquerda_Click(object sender, EventArgs e)
         {
+            AlinharEsquerda();
+        }
+
+       private void btnCentro_Click(object sender, EventArgs e)
+        {
+            Centralizar();
+        }
+
+        private void btnDireita_Click(object sender, EventArgs e)
+        {
+            AlinharDireita();
+        }
+
+        private void aEsquerdaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlinharEsquerda();
+        }
+
+        private void aDireitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlinharDireita();
+        }
+
+        private void btnFonte_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+        }
+        private  void Imprimir() {
+            printDialog1.Document = printDocument1;
+            string texto = this.rctTxb.Text;
+            leitura = new StringReader(texto);
+            if(printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            float linhasPag = 0;
+            float posY = 0;
+            int cont = 0;
+            //Definir margens para saber onde começa imprimir
+            float margenEsq = e.MarginBounds.Left - 50;
+            float margenSuperior = e.MarginBounds.Top - 50;
+            if(margenEsq < 5)
+            {
+                margenEsq = 20;
+            }
+            if (margenSuperior < 5)
+            {
+                margenSuperior = 20;
+            }
+            //
+            //configurar fonte, pincel altura linhas
+            string linha = null;
+            Font fonte = this.rctTxb.Font;
+            SolidBrush pincel = new SolidBrush(Color.Black);
+            //qnts linhas cabe na pagina dada altura e fonte
+            linhasPag = e.MarginBounds.Height / fonte.GetHeight(e.Graphics);
+            linha = leitura.ReadLine();
+            while(cont < linhasPag)
+            {
+                //tamanho e altura da fonte para posicionar Y 
+                posY = (margenSuperior + (cont * fonte.GetHeight(e.Graphics) ) );
+                //define nova linha de acordo com tamanho, posição.. 
+                e.Graphics.DrawString(linha, fonte,  pincel, margenEsq, posY, new StringFormat() );
+                cont++;
+                linha = leitura.ReadLine();
+            }
+            if(linha != null)
+            {
+                //se ainda tem linha define mais paginas como sim, pra continuar imprimindo
+                e.HasMorePages = true;
+            }
+            else
+            {
+                e.HasMorePages = false;
+            }
+            pincel.Dispose();
+
+        }
+
+        private void ImprimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Imprimir();
         }
     }
 }
